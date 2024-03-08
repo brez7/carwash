@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+</head>
+
+<body>
+    <h1>Receipt</h1>
+    <p>Customer Name: {{ customer.name }}</p>
+    <p>Car: {{ car.year }} {{ car.make }} {{ car.model }}</p>
+    <p>License Plate: {{ car.license_plate }}</p>
+    <!-- The barcode image would be dynamically generated and included here -->
+<img src="{{ barcode_image_url }}" alt="Barcode">
+
+</body>
+
+</html>
