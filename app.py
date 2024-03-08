@@ -1,3 +1,5 @@
+#Copyright 2024, Robert Bresnik, Brez Apps, Inc., ARR
+#Built for Cardiff Valero, Encinitas, CA
 from flask import Flask, request, render_template, redirect, url_for
 from models import init_db, Customer, Car, db_session
 import os
