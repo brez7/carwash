@@ -4,15 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Car Wash App</title>
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to the Car Wash Service</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <label for="license_plate_image">Upload an image of the license plate:</label>
-        <input type="file" id="license_plate_image" name="license_plate_image" required>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>Welcome to the Car Wash Service</h1>
+        <p>Please upload an image of the license plate or enter the license plate number below to proceed.</p>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="license_plate_image">Upload an image of the license plate:</label>
+                <input type="file" id="license_plate_image" name="license_plate_image" class="form-control-file">
+            </div>
+            <!-- Added input for manual license plate entry as a fallback -->
+            <div class="form-group">
+                <label for="license_plate">Or enter license plate:</label>
+                <input type="text" id="license_plate" name="license_plate" class="form-control"
+                    placeholder="License Plate">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

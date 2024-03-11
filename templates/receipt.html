@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Receipt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Receipt</h1>
-    <p>Customer Name: {{ customer.name }}</p>
-    <p>Car: {{ car.year }} {{ car.make }} {{ car.model }}</p>
-    <p>License Plate: {{ car.license_plate }}</p>
-    <!-- The barcode image would be dynamically generated and included here -->
-<img src="{{ barcode_image_url }}" alt="Barcode">
-
+    <div class="container">
+        <h1>Receipt</h1>
+        <p>Customer Name: {{ customer.name }}</p>
+        <p>Car: {{ car.year }} {{ car.make }} {{ car.model }}</p>
+        <p>License Plate: {{ car.license_plate }}</p>
+        <!-- The barcode image would be dynamically generated and included here -->
+        <img src="{{ barcode_image_url }}" alt="Barcode" class="img-fluid">
+    </div>
 </body>
 
 </html>
