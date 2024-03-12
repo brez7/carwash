@@ -9,12 +9,35 @@
         .container {
             margin-top: 50px;
         }
+
+        .info-title {
+            font-weight: 500;
+        }
+
+        .info-text {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <h1>Customer Information</h1>
+
+        {% if existing_car_info %}
+        <!-- Displaying Data as Text when Existing Info is Present -->
+        <div class="info-text"><span class="info-title">Name:</span> {{ existing_car_info.get('name', 'N/A') }}</div>
+        <div class="info-text"><span class="info-title">Phone:</span> {{ existing_car_info.get('phone', 'N/A') }}</div>
+        <div class="info-text"><span class="info-title">Email:</span> {{ existing_car_info.get('email', 'N/A') }}</div>
+        <div class="info-text"><span class="info-title">Car Year:</span> {{ existing_car_info.get('year', 'N/A') }}
+        </div>
+        <div class="info-text"><span class="info-title">Car Make:</span> {{ existing_car_info.get('make', 'N/A') }}
+        </div>
+        <div class="info-text"><span class="info-title">Car Model:</span> {{ existing_car_info.get('model', 'N/A') }}
+        </div>
+        <div class="info-text"><span class="info-title">License Plate:</span> {{ license_plate }}</div>
+        {% else %}
+        <!-- Input Form for New Data -->
         <form action="/customer/{{ license_plate }}" method="post">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -42,7 +65,11 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        {% endif %}
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
