@@ -15,7 +15,7 @@ BARCODE_PATH = 'static/barcodes'
 os.makedirs(BARCODE_PATH, exist_ok=True)  # Ensure the barcode directory exists
 
 def generate_barcode(license_plate):
-    barcode_filename = f'{license_plate}.png'
+    barcode_filename = f'{license_plate}.png.png'
     barcode_path = os.path.join(BARCODE_PATH, barcode_filename)
     Code128 = barcode.get_barcode_class('code128')
     barcode_instance = Code128(license_plate, writer=ImageWriter())
@@ -90,7 +90,7 @@ def customer_info(license_plate):
             }
         return render_template('customer_info.html', license_plate=license_plate, existing_car_info=existing_car_info)
 
-@app.route('/receipt/<license_plate>')
+@app.route('/<license_plate>')
 def print_receipt(license_plate):
     try:
         car = db_session.query(Car).filter_by(license_plate=license_plate).first()
