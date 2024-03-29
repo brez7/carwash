@@ -15,7 +15,7 @@ BARCODE_PATH = 'static/barcodes'
 os.makedirs(BARCODE_PATH, exist_ok=True)  # Ensure the barcode directory exists
 
 def generate_barcode(license_plate):
-    barcode_filename = f'{license_plate}.png.png'
+    barcode_filename = f'{license_plate}.png'
     barcode_path = os.path.join(BARCODE_PATH, barcode_filename)
     Code128 = barcode.get_barcode_class('code128')
     barcode_instance = Code128(license_plate, writer=ImageWriter())
