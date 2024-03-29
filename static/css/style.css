@@ -1,0 +1,17 @@
+body {
+    background-color: #333; /* Dark body background */
+    color: #ccc; /* Light grey text color */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Green button color */
+    border-color: #28a745; /* Green border for the button */
+}
